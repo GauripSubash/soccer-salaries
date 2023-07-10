@@ -7,6 +7,8 @@ This is a Quarto website.
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
 ```{r}
+#| echo: false
+#| message: false
 library(tidyverse)
 library(readxl)
 library(writexl)
@@ -16,22 +18,26 @@ library(dplyr)
 ```
 
 ```{r}
+#| echo: false
+#| message: false
 mls_data <- read.csv("mls-salaries-2007.csv")
 
 ```
 
 ```{r}
+#| echo: false
+#| message: false
 x <- mls_data |> 
   select("club", "position", "base_salary")
-```
 
-```{r}
 fit_1 <- stan_glm(base_salary ~ position,
                   data = x,
                   family = gaussian,
                   refresh = 0)
 fit_1
 ```
+
+
 
 
 

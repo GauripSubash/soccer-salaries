@@ -2,8 +2,16 @@
 title: "About"
 ---
 
-About this site
+# About Me 
 
-```{r}
-1 + 1
-```
+Hello, my name is Gaurinath Subash and I am currently going into senior year.
+
+# Contact Information
+
+gaurinathpsubash@gmail.com
+https://github.com/GauripSubash 
+
+# Bootcamp credentials
+
+This project was created as a part of Kane's Data Science Bootcamp.
+https://bootcamp.davidkane.info/ 

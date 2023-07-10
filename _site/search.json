@@ -1,16 +1,16 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Final Project",
-    "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(readxl)\nlibrary(writexl)\n\nWarning: package 'writexl' was built under R version 4.3.1\n\nlibrary(stringr)\nlibrary(rstanarm)\n\nWarning: package 'rstanarm' was built under R version 4.3.1\n\n\nLoading required package: Rcpp\nThis is rstanarm version 2.21.4\n- See https://mc-stan.org/rstanarm/articles/priors for changes to default priors!\n- Default priors may change, so it's safest to specify priors, even if equivalent to the defaults.\n- For execution on a local, multicore CPU with excess RAM we recommend calling\n  options(mc.cores = parallel::detectCores())\n\nlibrary(dplyr)\n\n\nmls_data &lt;- read.csv(\"mls-salaries-2007.csv\")\n\n\nx &lt;- mls_data |&gt; \n  select(\"club\", \"position\", \"base_salary\")\n\n\nfit_1 &lt;- stan_glm(base_salary ~ position,\n                  data = x,\n                  family = gaussian,\n                  refresh = 0)\nfit_1\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  66316.9  34011.0\npositionD-F -39361.3 348432.4\npositionD-M  18275.3 157673.6\npositionF    82320.1  49753.8\npositionF-D -54170.4 341545.4\npositionF-M -25558.1 170058.0\npositionGK   -8983.9  61663.9\npositionM    61374.0  47040.3\npositionM-D  33758.0 137156.6\npositionM-F   6818.6 115970.5\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336248.2  12319.8\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "About Me\nHello, my name is Gaurinath Subash and I am currently going into senior year.\n\n\nContact Information\ngaurinathpsubash@gmail.com https://github.com/GauripSubash\n\n\nBootcamp credentials\nThis project was created as a part of Kane’s Data Science Bootcamp. https://bootcamp.davidkane.info/"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\nWarning: package 'writexl' was built under R version 4.3.1\n\n\nWarning: package 'rstanarm' was built under R version 4.3.1\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  66271.5  34095.3\npositionD-F -31764.1 346663.3\npositionD-M  17553.6 164225.6\npositionF    80310.1  50292.8\npositionF-D -54778.2 329992.7\npositionF-M -34136.6 161250.5\npositionGK  -10097.0  59807.2\npositionM    61516.2  45266.0\npositionM-D  31106.8 143825.3\npositionM-F   5363.5 109549.4\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336018.3  12021.3\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
   }
 ]
