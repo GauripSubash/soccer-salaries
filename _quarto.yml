@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Final-Project"
+  title: "Soccer Player Income vs Field Position"
   navbar:
     left:
       - href: index.qmd
