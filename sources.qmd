@@ -1,4 +1,13 @@
 ---
-title: "sources"
+title: "Sources"
 editor: visual
 ---
+
+## Data Sources
+
+I used [kaggle](https://www.kaggle.com) for my dataset.
+
+-   <https://www.kaggle.com/code/kyleahfrederic/visualization-mls-base-salary-per-position-2007>
+
+### How I cleaned the Data
+I used certain portions of the data to make my own tibble, such as club, base_salary, and position. I cleaned the data by removing certain columns such as first_name and last_name. 

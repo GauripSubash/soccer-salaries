@@ -2,7 +2,7 @@
 title: "MLS Soccer"
 ---
 
-Player salaries are drastically different based on player positions in the MLS soccer league. his was sourced from a data set which used data originally from the MLS Union. Mapping data was then used to visualize the player salaries by field position in an intuitive format.Player positions such as Midfield earn more than other defender positions such as Goalkeeper or defense in the MLS league from 2007.
+Player salaries are drastically different based on player positions in the MLS soccer league. This was sourced from a data set which used data originally from the MLS Union. Mapping data was then used to visualize the player salaries by field position in an intuitive format. Offensive player positions such as Midfield and Forwards on average earn more than defensive positions such as goalkeeper and defenders in the MLS league in 2007. 
 
 ```{r}
 #| echo: false
@@ -24,24 +24,30 @@ mls_data <- read.csv("mls-salaries-2007.csv")
 
 ```
 
+
+
+
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 mls_data |>
   select(first_name, last_name, club, position, base_salary) |> 
-  filter(position == c("D", "F", "GK", "M")) |> 
+  filter(position == c("D", "F", "GK", "M")) |>
   ggplot(mapping = aes(x = position, 
                        y = base_salary, 
-                       fill = position)) + 
+                       color = position)) + 
   scale_y_continuous(labels=scales::dollar_format()) + 
-  geom_bar(stat = "identity") + 
+  geom_jitter(size = 1.5) + 
   labs(x = "Field Position", 
        y = "Base Salary", 
-       title = "Highest Salary per position", 
-       caption = "Source: KYLEAH FREDERIC") + 
+       title = "Condensed Spread of salary per position", 
+       caption = "Source: Originally from MLS Union") + 
   theme_classic()
 ```
+
+
 
 
 

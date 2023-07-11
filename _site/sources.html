@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Final-Project - About</title>
+<title>Final-Project - Sources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Models</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./sources.html" rel="" target="">
+    <a class="nav-link active" href="./sources.html" rel="" target="" aria-current="page">
  <span class="menu-text">Sources</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -135,9 +135,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-me" id="toc-about-me" class="nav-link active" data-scroll-target="#about-me">About Me</a></li>
-  <li><a href="#contact-information" id="toc-contact-information" class="nav-link" data-scroll-target="#contact-information">Contact Information</a></li>
-  <li><a href="#bootcamp-credentials" id="toc-bootcamp-credentials" class="nav-link" data-scroll-target="#bootcamp-credentials">Bootcamp credentials</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link active" data-scroll-target="#data-sources">Data Sources</a>
+  <ul class="collapse">
+  <li><a href="#how-i-cleaned-the-data" id="toc-how-i-cleaned-the-data" class="nav-link" data-scroll-target="#how-i-cleaned-the-data">How I cleaned the Data</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Sources</h1>
 </div>
 
 
@@ -161,19 +162,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">About Me</h2>
-<p>Hello, my name is Gaurinath Subash and I am currently going into senior year.</p>
-</section>
-<section id="contact-information" class="level1">
-<h1>Contact Information</h1>
-<p>gaurinathpsubash@gmail.com https://github.com/GauripSubash</p>
-</section>
-<section id="bootcamp-credentials" class="level1">
-<h1>Bootcamp credentials</h1>
-<p>This project was created as a part of Kane’s Data Science Bootcamp. https://bootcamp.davidkane.info/</p>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+<p>I used <a href="https://www.kaggle.com">kaggle</a> for my dataset.</p>
+<ul>
+<li><a href="https://www.kaggle.com/code/kyleahfrederic/visualization-mls-base-salary-per-position-2007" class="uri">https://www.kaggle.com/code/kyleahfrederic/visualization-mls-base-salary-per-position-2007</a></li>
+</ul>
+<section id="how-i-cleaned-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="how-i-cleaned-the-data">How I cleaned the Data</h3>
+<p>I used certain portions of the data to make my own tibble, such as club, base_salary, and position. I cleaned the data by removing certain columns such as first_name and last_name.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

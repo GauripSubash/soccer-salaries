@@ -25,15 +25,34 @@ mls_data <- read.csv("mls-salaries-2007.csv")
 
 ```
 
+## What is the approximate salary of a player based on their field position? 
 
 
 
+
+
+
+### Model Equation
+
+$$y_i = \beta_0  + \beta_1 x_{1,i} + \epsilon_i$$
+
+with $y = base\_salary$, $x_1 = position$, and $\epsilon_i \sim N(0, \sigma^2)$.
+
+
+
+
+
+
+
+
+
+### Fitted Model
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 x <- mls_data |> 
-  select("club", "position", "base_salary")
+  select(club, position, base_salary)
 
 fit_1 <- stan_glm(base_salary ~ position,
                   data = x,
@@ -41,3 +60,132 @@ fit_1 <- stan_glm(base_salary ~ position,
                   refresh = 0)
 fit_1
 ```
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+newobs <- tibble(position = "F")
+
+pe <- posterior_epred(fit_1, newdata = newobs) |> 
+  as_tibble() 
+```
+
+### Plot
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+pe |> 
+  ggplot(aes(x = `1`)) +
+    geom_histogram(aes(y = after_stat(count/sum(count))),
+                   bins = 100)  +
+    labs(title = "Posterior for Expected Salary",
+         subtitle = "A forward earns around 150,000",
+         x = "Forward Position",
+         y = "Probability", 
+         caption = "Source: Originally from MLS Union") +
+    scale_x_continuous(labels = scales::dollar_format()) +
+    scale_y_continuous(labels = scales::percent_format()) +
+    theme_classic()
+```
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+newobs <- tibble(position = "M")
+
+pm <- posterior_epred(fit_1, newdata = newobs) |> 
+  as_tibble() 
+```
+
+ 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+pm |> 
+  ggplot(aes(x = `1`)) +
+    geom_histogram(aes(y = after_stat(count/sum(count))),
+                   bins = 100)  +
+    labs(title = "Posterior for Expected Salary",
+         subtitle = "A midfielder earns around 130,000",
+         x = "Midfield Position",
+         y = "Probability", 
+         caption = "Source: Originally from MLS Union") +
+    scale_x_continuous(labels = scales::dollar_format()) +
+    scale_y_continuous(labels = scales::percent_format()) +
+    theme_classic()
+```
+
+
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+newobs <- tibble(position = "D")
+
+pd <- posterior_epred(fit_1, newdata = newobs) |> 
+  as_tibble() 
+```
+
+ 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+pd |> 
+  ggplot(aes(x = `1`)) +
+    geom_histogram(aes(y = after_stat(count/sum(count))),
+                   bins = 100)  +
+    labs(title = "Posterior for Expected Salary",
+         subtitle = "A defender earns around 75,000",
+         x = "Defense Position",
+         y = "Probability", 
+         caption = "Source: Originally from MLS Union") +
+    scale_x_continuous(labels = scales::dollar_format()) +
+    scale_y_continuous(labels = scales::percent_format()) +
+    theme_classic()
+```
+
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+newobs <- tibble(position = "GK")
+
+pe <- posterior_epred(fit_1, newdata = newobs) |> 
+  as_tibble() 
+```
+
+ 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+pe |> 
+  ggplot(aes(x = `1`)) +
+    geom_histogram(aes(y = after_stat(count/sum(count))),
+                   bins = 100)  +
+    labs(title = "Posterior for Expected Salary",
+         subtitle = "A goalkeeper earns around 70,000",
+         x = "GoalKeeper Position",
+         y = "Probability", 
+         caption = "Source: Originally from MLS Union") +
+    scale_x_continuous(labels = scales::dollar_format()) +
+    scale_y_continuous(labels = scales::percent_format()) +
+    theme_classic()
+```
+
+
+
+
+
+

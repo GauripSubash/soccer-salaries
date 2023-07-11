@@ -8,6 +8,14 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - models.qmd
+      - sources.qmd
+      - text: "Positions"
+        menu: 
+          - goalkeeper.qmd
+          - defense.qmd
+          - midfield.qmd
+          - offense.qmd
 
 format:
   html:

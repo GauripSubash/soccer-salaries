@@ -1,5 +1,5 @@
 ---
-title: "Defense"
+title: "Offense"
 editor: visual
 ---
 
@@ -22,39 +22,35 @@ library(dplyr)
 mls_data <- read.csv("mls-salaries-2007.csv")
 
 ```
-### Plot for all defenders in MLS League in 2007
+
+### Plot for all forwards in MLS League in 2007
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 mls_data |> 
-  filter(position == "D") |> 
+  filter(position == "F") |> 
   select(position, base_salary, club, first_name, last_name) |> 
   ggplot(mapping = aes(x = position, 
                        y = base_salary, 
                        color = club)) + 
   geom_jitter() + 
   scale_y_continuous(labels=scales::dollar_format()) + 
-  labs(title = "Soccer salaries earned for defensive players in 2007", 
+  labs(title = "Soccer salaries earned for forward players in 2007", 
        x = "Position", 
        y = "Player Base Salary", 
        caption = "Source: Originally from MLS Union") + 
   theme_classic()
 ```
+This data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the highest player salary was around 2.5 million dollars. 
 
-
-This data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the spread is wider than some might think. The highest salary for a defender during this time was almost $300,000.
-
-
-
-
-### Plot for average defender salary in 2007
+### Plot for average forward salary in 2007
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 data<- mls_data |> 
-                  filter(position == "D") |> 
+                  filter(position == "F") |> 
                   reframe(position, salary = mean(base_salary))
 data <- slice(data, 1)
 
@@ -64,13 +60,11 @@ data |>
                        fill = position)) + 
   geom_bar(stat = "identity") + 
   scale_y_continuous(labels=scales::dollar_format()) + 
-  labs(title = "Average player salary earned for defensive players in 2007", 
+  labs(title = "Average player salary earned for forward players in 2007", 
        x = "Position", 
        y = "Player Base Salary", 
        caption = "Source: Originally from MLS Union") +
   theme_classic()
 
-
 ```
-
-This data shows a graph for the average salary a defender had in 2007. This was approximately $65,000, which is less than average for offensive positions.
+This data shows a graph for the average salary a forward had in 2007. This was approximately $150,000, which is more than average for defensive positions.

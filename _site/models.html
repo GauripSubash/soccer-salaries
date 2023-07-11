@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Final-Project - About</title>
+<title>Final-Project - Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -85,11 +87,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./models.html" rel="" target="">
+    <a class="nav-link active" href="./models.html" rel="" target="" aria-current="page">
  <span class="menu-text">Models</span></a>
   </li>  
   <li class="nav-item">
@@ -135,9 +137,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-me" id="toc-about-me" class="nav-link active" data-scroll-target="#about-me">About Me</a></li>
-  <li><a href="#contact-information" id="toc-contact-information" class="nav-link" data-scroll-target="#contact-information">Contact Information</a></li>
-  <li><a href="#bootcamp-credentials" id="toc-bootcamp-credentials" class="nav-link" data-scroll-target="#bootcamp-credentials">Bootcamp credentials</a></li>
+  <li><a href="#what-is-the-approximate-salary-of-a-player-based-on-their-field-position" id="toc-what-is-the-approximate-salary-of-a-player-based-on-their-field-position" class="nav-link active" data-scroll-target="#what-is-the-approximate-salary-of-a-player-based-on-their-field-position">What is the approximate salary of a player based on their field position?</a>
+  <ul class="collapse">
+  <li><a href="#model-equation" id="toc-model-equation" class="nav-link" data-scroll-target="#model-equation">Model Equation</a></li>
+  <li><a href="#fitted-model" id="toc-fitted-model" class="nav-link" data-scroll-target="#fitted-model">Fitted Model</a></li>
+  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">Plot</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -146,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Models</h1>
 </div>
 
 
@@ -161,19 +166,70 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">About Me</h2>
-<p>Hello, my name is Gaurinath Subash and I am currently going into senior year.</p>
+<section id="what-is-the-approximate-salary-of-a-player-based-on-their-field-position" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-the-approximate-salary-of-a-player-based-on-their-field-position">What is the approximate salary of a player based on their field position?</h2>
+<section id="model-equation" class="level3">
+<h3 class="anchored" data-anchor-id="model-equation">Model Equation</h3>
+<p><span class="math display">\[y_i = \beta_0  + \beta_1 x_{1,i} + \epsilon_i\]</span></p>
+<p>with <span class="math inline">\(y = base\_salary\)</span>, <span class="math inline">\(x_1 = position\)</span>, and <span class="math inline">\(\epsilon_i \sim N(0, \sigma^2)\)</span>.</p>
 </section>
-<section id="contact-information" class="level1">
-<h1>Contact Information</h1>
-<p>gaurinathpsubash@gmail.com https://github.com/GauripSubash</p>
+<section id="fitted-model" class="level3">
+<h3 class="anchored" data-anchor-id="fitted-model">Fitted Model</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>stan_glm
+ family:       gaussian [identity]
+ formula:      base_salary ~ position
+ observations: 371
+ predictors:   10
+------
+            Median   MAD_SD  
+(Intercept)  67045.9  33514.7
+positionD-F -33576.6 330082.0
+positionD-M  19919.9 153397.1
+positionF    80224.1  50788.6
+positionF-D -61899.8 334690.9
+positionF-M -28653.4 175422.8
+positionGK  -12165.2  62077.7
+positionM    60647.6  44337.2
+positionM-D  30166.2 140825.2
+positionM-F   6753.5 109906.2
+
+Auxiliary parameter(s):
+      Median   MAD_SD  
+sigma 336262.3  12440.8
+
+------
+* For help interpreting the printed output see ?print.stanreg
+* For info on the priors used see ?prior_summary.stanreg</code></pre>
+</div>
+</div>
 </section>
-<section id="bootcamp-credentials" class="level1">
-<h1>Bootcamp credentials</h1>
-<p>This project was created as a part of Kane’s Data Science Bootcamp. https://bootcamp.davidkane.info/</p>
+<section id="plot" class="level3">
+<h3 class="anchored" data-anchor-id="plot">Plot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="models_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="models_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="models_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="models_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
