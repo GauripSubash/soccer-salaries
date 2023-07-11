@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Final-Project - Final Project</title>
+<title>Final-Project - MLS Soccer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -100,14 +100,29 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-my-project" id="toc-about-my-project" class="nav-link active" data-scroll-target="#about-my-project">About My Project</a>
+  <ul class="collapse">
+  <li><a href="#soccer-postitions" id="toc-soccer-postitions" class="nav-link" data-scroll-target="#soccer-postitions">Soccer Postitions</a>
+  <ul class="collapse">
+  <li><a href="#goalkeepergk" id="toc-goalkeepergk" class="nav-link" data-scroll-target="#goalkeepergk">Goalkeeper/GK</a></li>
+  <li><a href="#defensed" id="toc-defensed" class="nav-link" data-scroll-target="#defensed">Defense/D</a></li>
+  <li><a href="#midfieldm" id="toc-midfieldm" class="nav-link" data-scroll-target="#midfieldm">Midfield/M</a></li>
+  <li><a href="#forwardf" id="toc-forwardf" class="nav-link" data-scroll-target="#forwardf">Forward/F</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Final Project</h1>
+<h1 class="title">MLS Soccer</h1>
 </div>
 
 
@@ -122,47 +137,38 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'writexl' was built under R version 4.3.1</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'rstanarm' was built under R version 4.3.1</code></pre>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>stan_glm
- family:       gaussian [identity]
- formula:      base_salary ~ position
- observations: 371
- predictors:   10
-------
-            Median   MAD_SD  
-(Intercept)  66271.5  34095.3
-positionD-F -31764.1 346663.3
-positionD-M  17553.6 164225.6
-positionF    80310.1  50292.8
-positionF-D -54778.2 329992.7
-positionF-M -34136.6 161250.5
-positionGK  -10097.0  59807.2
-positionM    61516.2  45266.0
-positionM-D  31106.8 143825.3
-positionM-F   5363.5 109549.4
-
-Auxiliary parameter(s):
-      Median   MAD_SD  
-sigma 336018.3  12021.3
-
-------
-* For help interpreting the printed output see ?print.stanreg
-* For info on the priors used see ?prior_summary.stanreg</code></pre>
-</div>
-</div>
+<section id="about-my-project" class="level1">
+<h1>About My Project</h1>
+<p>This project will examine the correlation between soccer field positions and player salaries in the MLS Soccer League from 2007.</p>
+<p>Soccer, also known as football in different parts of the world, is a team sport that has 4 different categories: <strong>Forward, Midfield, Defense,</strong> and <strong>Goalie</strong>. Each team has 11 players divided into these categories. One player is the goalie while the rest are divided into the other categories. The objective of the game is to score goals against the other team using your feet, and the team with the most goals at the end of the allocated time wins.</p>
+<p>There are many combinations for how many players can play for each position. There is always one goalkeeper, but the rest can played in any way. The most popular formation is 1-4-3-3. This means 1 goalkeeper, 4 defenders, 3 midfielders and 3 forwards.</p>
+<section id="soccer-postitions" class="level2">
+<h2 class="anchored" data-anchor-id="soccer-postitions">Soccer Postitions</h2>
+<section id="goalkeepergk" class="level3">
+<h3 class="anchored" data-anchor-id="goalkeepergk">Goalkeeper/GK</h3>
+<p>There is always 1 Goalkeeper in ANY formation</p>
+</section>
+<section id="defensed" class="level3">
+<h3 class="anchored" data-anchor-id="defensed">Defense/D</h3>
+<p>There are 4 defenders in this formation: Left Defender, Center Left Defender, Center Right Defender, and Right Defender.</p>
+</section>
+<section id="midfieldm" class="level3">
+<h3 class="anchored" data-anchor-id="midfieldm">Midfield/M</h3>
+<p>There are 3 midfielders in this formation: Left Midfielder, Center Midfielder, and Right Midfielder.</p>
+</section>
+<section id="forwardf" class="level3">
+<h3 class="anchored" data-anchor-id="forwardf">Forward/F</h3>
+<p>There are 3 Forwards in this formation: Left Forward, Center Forward, and Right Forward.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

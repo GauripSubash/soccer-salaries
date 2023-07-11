@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-# About Me 
+## About Me 
 
 Hello, my name is Gaurinath Subash and I am currently going into senior year.
 

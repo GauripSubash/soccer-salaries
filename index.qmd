@@ -1,14 +1,13 @@
 ---
-title: "Final Project"
+title: "MLS Soccer"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Player salaries are drastically different based on player positions in the MLS soccer league. his was sourced from a data set which used data originally from the MLS Union. Mapping data was then used to visualize the player salaries by field position in an intuitive format.Player positions such as Midfield earn more than other defender positions such as Goalkeeper or defense in the MLS league from 2007.
 
 ```{r}
 #| echo: false
 #| message: false
+#| warning: false
 library(tidyverse)
 library(readxl)
 library(writexl)
@@ -20,6 +19,7 @@ library(dplyr)
 ```{r}
 #| echo: false
 #| message: false
+#| warning: false
 mls_data <- read.csv("mls-salaries-2007.csv")
 
 ```
@@ -27,15 +27,50 @@ mls_data <- read.csv("mls-salaries-2007.csv")
 ```{r}
 #| echo: false
 #| message: false
-x <- mls_data |> 
-  select("club", "position", "base_salary")
-
-fit_1 <- stan_glm(base_salary ~ position,
-                  data = x,
-                  family = gaussian,
-                  refresh = 0)
-fit_1
+#| warning: false
+mls_data |>
+  select(first_name, last_name, club, position, base_salary) |> 
+  filter(position == c("D", "F", "GK", "M")) |> 
+  ggplot(mapping = aes(x = position, 
+                       y = base_salary, 
+                       fill = position)) + 
+  scale_y_continuous(labels=scales::dollar_format()) + 
+  geom_bar(stat = "identity") + 
+  labs(x = "Field Position", 
+       y = "Base Salary", 
+       title = "Highest Salary per position", 
+       caption = "Source: KYLEAH FREDERIC") + 
+  theme_classic()
 ```
+
+
+
+
+# About My Project
+This project will examine the correlation between soccer field positions and player salaries in the MLS Soccer League from 2007. 
+
+Soccer, also known as football in different parts of the world, is a team sport that has 4 different categories: **Forward, Midfield, Defense,** and **Goalie**. Each team has 11 players divided into these categories. One player is the goalie while the rest are divided into the other categories. The objective of the game is to score goals against the other team using your feet, and the team with the most goals at the end of the allocated time wins. 
+
+There are many combinations for how many players can play for each position. There is always one goalkeeper, but the rest can played in any way. The most popular formation is 1-4-3-3. This means 1 goalkeeper, 4 defenders, 3 midfielders and 3 forwards. 
+
+## Soccer Postitions
+
+### Goalkeeper/GK
+
+There is always 1 Goalkeeper in ANY formation 
+
+### Defense/D
+
+There are 4 defenders in this formation: Left Defender, Center Left Defender, Center Right Defender, and Right Defender.
+
+### Midfield/M
+
+There are 3 midfielders in this formation: Left Midfielder, Center Midfielder, and Right Midfielder.
+
+### Forward/F
+
+There are 3 Forwards in this formation: Left Forward, Center Forward, and Right Forward.
+ 
 
 
 

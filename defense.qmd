@@ -1,0 +1,46 @@
+---
+title: "Defense"
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+library(writexl)
+library(stringr)
+library(rstanarm)
+library(dplyr)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+mls_data <- read.csv("mls-salaries-2007.csv")
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+mls_data |> 
+  filter(position == "D") |> 
+  select(position, base_salary, club) |> 
+  ggplot(mapping = aes(x = position, 
+                       y = base_salary, 
+                       color = club)) + 
+  geom_point() + 
+  scale_y_continuous(labels=scales::dollar_format())
+```
+```{r}
+mls_data |> 
+  filter(position == "D")
+summary(mls_data)
+```
+
+
+

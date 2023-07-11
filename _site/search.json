@@ -9,8 +9,15 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Final Project",
+    "title": "MLS Soccer",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n\nWarning: package 'writexl' was built under R version 4.3.1\n\n\nWarning: package 'rstanarm' was built under R version 4.3.1\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  66271.5  34095.3\npositionD-F -31764.1 346663.3\npositionD-M  17553.6 164225.6\npositionF    80310.1  50292.8\npositionF-D -54778.2 329992.7\npositionF-M -34136.6 161250.5\npositionGK  -10097.0  59807.2\npositionM    61516.2  45266.0\npositionM-D  31106.8 143825.3\npositionM-F   5363.5 109549.4\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336018.3  12021.3\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
+    "text": "stan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  67057.1  32471.6\npositionD-F -38530.1 331725.7\npositionD-M  18538.9 150416.8\npositionF    82013.7  49659.3\npositionF-D -54476.5 334100.7\npositionF-M -36208.2 165573.3\npositionGK  -10966.3  60110.0\npositionM    60685.6  44617.5\npositionM-D  35531.7 140373.1\npositionM-F   5907.0 110288.2\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 335859.4  12303.2\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
+  },
+  {
+    "objectID": "index.html#soccer-postitions",
+    "href": "index.html#soccer-postitions",
+    "title": "MLS Soccer",
+    "section": "Soccer Postitions",
+    "text": "Soccer Postitions\n\nGoalkeeper/GK\nThere is always 1 Goalkeeper in ANY formation\n\n\nDefense/D\nThere are 4 defenders in this formation: Left Defender, Center Left Defender, Center Right Defender, and Right Defender.\n\n\nMidfield/M\nThere are 3 midfielders in this formation: Left Midfielder, Center Midfielder, and Right Midfielder.\n\n\nForward/F\nThere are 3 Forwards in this formation: Left Forward, Center Forward, and Right Forward."
   }
 ]
