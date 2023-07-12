@@ -8,8 +8,11 @@ Hello, my name is Gaurinath Subash and I am currently going into senior year.
 
 # Contact Information
 
-gaurinathpsubash@gmail.com
-https://github.com/GauripSubash 
+gaurinathpsubash@gmail.com 
+
+# Github 
+
+https://github.com/GauripSubash
 
 # Bootcamp credentials
 

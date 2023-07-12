@@ -18,7 +18,7 @@
     "href": "defense.html",
     "title": "Defense",
     "section": "",
-    "text": "Plot for all defenders in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the spread is wider than some might think. The highest salary for a defender during this time was almost $300,000.\n\n\nPlot for average defender salary in 2007\n\n\n\n\n\nThis data shows a graph for the average salary a defender had in 2007. This was approximately $65,000, which is less than average for offensive positions."
+    "text": "Plot for all defenders in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the spread is wider than some might think. The line in the middle of the graph displays the average for all defenders in the MLS League in 2007, which is $66,842.51."
   },
   {
     "objectID": "goalkeeper.html",
@@ -53,14 +53,14 @@
     "href": "models.html",
     "title": "Models",
     "section": "",
-    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  66182.3  34236.4\npositionD-F -31841.7 345321.6\npositionD-M  12569.9 148200.3\npositionF    80564.8  51568.0\npositionF-D -47941.0 331334.2\npositionF-M -28099.4 176513.4\npositionGK  -10374.8  62485.2\npositionM    60612.0  45337.5\npositionM-D  34985.9 144719.7\npositionM-F   5486.9 109185.3\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336028.9  12267.9\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
+    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  65508.3  33727.6\npositionD-F -38165.1 340783.3\npositionD-M  17622.0 158356.1\npositionF    81841.9  51424.0\npositionF-D -44061.0 337384.8\npositionF-M -35413.7 169157.2\npositionGK  -12319.7  60986.7\npositionM    60102.3  44988.9\npositionM-D  32416.2 134631.6\npositionM-F   2661.4 111171.8\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336030.2  12668.4\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
   },
   {
     "objectID": "models.html#what-is-the-approximate-salary-of-a-player-based-on-their-field-position",
     "href": "models.html#what-is-the-approximate-salary-of-a-player-based-on-their-field-position",
     "title": "Models",
     "section": "",
-    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  66182.3  34236.4\npositionD-F -31841.7 345321.6\npositionD-M  12569.9 148200.3\npositionF    80564.8  51568.0\npositionF-D -47941.0 331334.2\npositionF-M -28099.4 176513.4\npositionGK  -10374.8  62485.2\npositionM    60612.0  45337.5\npositionM-D  34985.9 144719.7\npositionM-F   5486.9 109185.3\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336028.9  12267.9\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
+    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  65508.3  33727.6\npositionD-F -38165.1 340783.3\npositionD-M  17622.0 158356.1\npositionF    81841.9  51424.0\npositionF-D -44061.0 337384.8\npositionF-M -35413.7 169157.2\npositionGK  -12319.7  60986.7\npositionM    60102.3  44988.9\npositionM-D  32416.2 134631.6\npositionM-F   2661.4 111171.8\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336030.2  12668.4\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
   },
   {
     "objectID": "offense.html",
