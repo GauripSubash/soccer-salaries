@@ -47,17 +47,18 @@ data |>
   scale_x_discrete(breaks = c("GK", "D", "M", "F")) + 
   scale_y_continuous(labels=scales::dollar_format()) + 
   geom_jitter(size = 3.5) + 
-  scale_x_discrete(labels = c("Goalkeeper", "Defender", "Midfielder", "Forward")) + 
+  scale_x_discrete(labels = c("Goalkeeper", "Defender", "Midfielder", "Forward")) +
+  scale_color_discrete(labels = c("GK" = "Goalkeeper", "D" = "Defender", "M" = "Midfielder", "F" = "Forward")) + 
   labs(x = "Field Position", 
        y = "Base Salary", 
        title = "Base Salary of a Soccer player based on their field position",
-       subtitle = "Forwards and Midfielders tend to earn more than Goalkeepers and Defenders in the MLS league in 2007",
+       subtitle = "Forward tend to earn more than Defenders in the MLS League in 2007",
        caption = "Source: Originally from MLS Union",
        color = "Position") + 
   theme_classic()
 ```
 
-Player salaries are drastically different based on player positions in the MLS soccer league. This was sourced from a data set which used data originally from the MLS Union. Mapping data was then used to visualize the player salaries by field position in an intuitive format. Offensive player positions such as Midfield and Forwards on average earn more than defensive positions such as goalkeeper and defenders in the MLS league in 2007.
+Player salaries are drastically different based on player positions in the MLS soccer league. This was sourced from a data set which used data originally from the MLS Union. Mapping data was then used to visualize the player salaries by field position in an intuitive format. On average, forwards tend to earn the most money, with an average salary of around $145,000, which is more than any other position on the field. 
 
 
 

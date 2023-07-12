@@ -25,14 +25,14 @@
     "href": "goalkeeper.html",
     "title": "Goalkeepers",
     "section": "",
-    "text": "Plot for all goalkeepers in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for goalkeepers in 2007. The colors show the clubs each player was in, and the highest player salary was around $250,000 dollars.\n\n\nPlot for average goalkeepers salary in 2007\n\n\n\n\n\nThis data shows a graph for the average salary a goalkeeper had in 2007. This was approximately $50,000, which is less than average for offensive positions."
+    "text": "Plot for all goalkeepers in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for goalkeepers in 2007. The line in the middle of the graph displays the average for all goalkeepers in the MLS League in 2007, which is $56,502.35."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "MLS Soccer",
     "section": "",
-    "text": "Player salaries are drastically different based on player positions in the MLS soccer league. This was sourced from a data set which used data originally from the MLS Union. Mapping data was then used to visualize the player salaries by field position in an intuitive format. Offensive player positions such as Midfield and Forwards on average earn more than defensive positions such as goalkeeper and defenders in the MLS league in 2007."
+    "text": "Player salaries are drastically different based on player positions in the MLS soccer league. This was sourced from a data set which used data originally from the MLS Union. Mapping data was then used to visualize the player salaries by field position in an intuitive format. On average, forwards tend to earn the most money, with an average salary of around $145,000, which is more than any other position on the field."
   },
   {
     "objectID": "index.html#soccer-postitions",
@@ -46,28 +46,28 @@
     "href": "midfield.html",
     "title": "Midfield",
     "section": "",
-    "text": "Plot for all midfelders in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for midfielders in 2007. The colors show the clubs each player was in, and the highest player salary was around 5 million dollars.\n\n\nPlot for average midfielder salary in 2007\n\n\n\n\n\nThis data shows a graph for the average salary a midfielder had in 2007. This was approximately $140,000, which is more than average for defensive positions."
+    "text": "Plot for all midfelders in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for midfielders in 2007. The colors show the clubs each player was in. There are a couple extreme outliers in this graph, which show that there isn’t consistency for midfielder salaries. The line in the middle of the graph displays the average for all forwards in the MLS League in 2007, which is $127,843."
   },
   {
     "objectID": "models.html",
     "href": "models.html",
     "title": "Models",
     "section": "",
-    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  65508.3  33727.6\npositionD-F -38165.1 340783.3\npositionD-M  17622.0 158356.1\npositionF    81841.9  51424.0\npositionF-D -44061.0 337384.8\npositionF-M -35413.7 169157.2\npositionGK  -12319.7  60986.7\npositionM    60102.3  44988.9\npositionM-D  32416.2 134631.6\npositionM-F   2661.4 111171.8\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336030.2  12668.4\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
+    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  67256.7  34010.1\npositionD-F -32189.5 338532.1\npositionD-M  12418.5 152228.7\npositionF    78940.9  51372.5\npositionF-D -47017.2 351531.0\npositionF-M -31197.7 183742.0\npositionGK  -12475.1  61710.4\npositionM    60283.5  45504.0\npositionM-D  32312.2 149527.9\npositionM-F   3537.7 110545.4\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336323.0  12536.1\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
   },
   {
     "objectID": "models.html#what-is-the-approximate-salary-of-a-player-based-on-their-field-position",
     "href": "models.html#what-is-the-approximate-salary-of-a-player-based-on-their-field-position",
     "title": "Models",
     "section": "",
-    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  65508.3  33727.6\npositionD-F -38165.1 340783.3\npositionD-M  17622.0 158356.1\npositionF    81841.9  51424.0\npositionF-D -44061.0 337384.8\npositionF-M -35413.7 169157.2\npositionGK  -12319.7  60986.7\npositionM    60102.3  44988.9\npositionM-D  32416.2 134631.6\npositionM-F   2661.4 111171.8\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336030.2  12668.4\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
+    "text": "\\[y_i = \\beta_0  + \\beta_1 x_{1,i} + \\epsilon_i\\]\nwith \\(y = base\\_salary\\), \\(x_1 = position\\), and \\(\\epsilon_i \\sim N(0, \\sigma^2)\\).\n\n\n\n\n\nstan_glm\n family:       gaussian [identity]\n formula:      base_salary ~ position\n observations: 371\n predictors:   10\n------\n            Median   MAD_SD  \n(Intercept)  67256.7  34010.1\npositionD-F -32189.5 338532.1\npositionD-M  12418.5 152228.7\npositionF    78940.9  51372.5\npositionF-D -47017.2 351531.0\npositionF-M -31197.7 183742.0\npositionGK  -12475.1  61710.4\npositionM    60283.5  45504.0\npositionM-D  32312.2 149527.9\npositionM-F   3537.7 110545.4\n\nAuxiliary parameter(s):\n      Median   MAD_SD  \nsigma 336323.0  12536.1\n\n------\n* For help interpreting the printed output see ?print.stanreg\n* For info on the priors used see ?prior_summary.stanreg"
   },
   {
     "objectID": "offense.html",
     "href": "offense.html",
     "title": "Offense",
     "section": "",
-    "text": "Plot for all forwards in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the highest player salary was around 2.5 million dollars.\n\n\nPlot for average forward salary in 2007\n\n\n\n\n\nThis data shows a graph for the average salary a forward had in 2007. This was approximately $150,000, which is more than average for defensive positions."
+    "text": "Plot for all forwards in MLS League in 2007\n\n\n\n\n\nThis data shows the spread of salaries for forwards in 2007. The colors show the clubs each player was in. There are a few outliers in this graph, which show that there isn’t consistency for forwards salaries. The line in the middle of the graph displays the average for all forwards in the MLS League in 2007, which is $147,653."
   },
   {
     "objectID": "sources.html",

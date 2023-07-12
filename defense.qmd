@@ -23,7 +23,7 @@ library(plotly)
 #| echo: false
 #| message: false
 #| warning: false
-data <- read.csv("mls-salaries-2007.csv")
+ddata <- read.csv("mls-salaries-2007.csv")
 
 ```
 
@@ -37,22 +37,24 @@ data <- read.csv("mls-salaries-2007.csv")
 #| message: false
 #| warning: false
 
-data |> 
+ddata |> 
   filter(position == "D") |> 
   select(position, base_salary, club, first_name, last_name) |>
   ggplot(mapping = aes(x = position, 
                        y = base_salary, 
                        color = club)) + 
-  geom_jitter() + 
+  geom_jitter(size = 2.5) + 
   scale_y_continuous(labels=scales::dollar_format()) + 
-  labs(title = "Soccer salaries earned for defensive players in 2007", 
+    scale_color_discrete( 
+    labels = c("CHI" = "Chicago Fire", "CHV" = "Chivas USA", "CLB" = "Columbus Crew", "COL" =         "Colorado Rapids", "DAL" = "FC Dallas", "DC" = "D.C. United", "HOU" = "Houston Dynamo", "KC" =     "Kansas City Wizards", "LA" = "LA Galaxy", "NE" = "New England Revolution", "NY" = "New York Red Bulls", "RSL" = "Real Salt Lake", "TFC" = "Toronto FC")) + 
+  labs(title = "Soccer salaries earned for defensive players in 2007",
+       subtitle = "Average salary for a defender is around $65,000 which is less than average for midfielders",
        x = "Position", 
        y = "Player Base Salary", 
        caption = "Source: Originally from MLS Union", 
        color = "Club") + 
   theme_classic() + 
-  geom_hline(yintercept = 66842.51, linetype = "dashed", color = "red")  
-
+  geom_hline(yintercept = 66842.51, linetype = "dashed", color = "red")
 
 
 ```

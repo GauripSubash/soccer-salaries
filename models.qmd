@@ -13,6 +13,7 @@ library(writexl)
 library(stringr)
 library(rstanarm)
 library(dplyr)
+library(gtsummary)
 ```
 
 
@@ -51,14 +52,15 @@ with $y = base\_salary$, $x_1 = position$, and $\epsilon_i \sim N(0, \sigma^2)$.
 #| echo: false
 #| message: false
 #| warning: false
-x <- mls_data |> 
-  select(club, position, base_salary)
+x<- mls_data |> 
+  select(base_salary, position, club)
 
-fit_1 <- stan_glm(base_salary ~ position,
-                  data = x,
-                  family = gaussian,
-                  refresh = 0)
-fit_1
+fit_obj <- stan_glm(formula = base_salary ~ position,
+                    family = gaussian,
+                    data = x,
+                    refresh = 0,
+                    seed = 9)
+fit_obj
 ```
 
 
@@ -68,7 +70,7 @@ fit_1
 #| warning: false
 newobs <- tibble(position = "F")
 
-pe <- posterior_epred(fit_1, newdata = newobs) |> 
+pe <- posterior_epred(fit_obj, newdata = newobs) |> 
   as_tibble() 
 ```
 
@@ -98,7 +100,7 @@ pe |>
 #| warning: false
 newobs <- tibble(position = "M")
 
-pm <- posterior_epred(fit_1, newdata = newobs) |> 
+pm <- posterior_epred(fit_obj, newdata = newobs) |> 
   as_tibble() 
 ```
 
@@ -130,7 +132,7 @@ pm |>
 #| warning: false
 newobs <- tibble(position = "D")
 
-pd <- posterior_epred(fit_1, newdata = newobs) |> 
+pd <- posterior_epred(fit_obj, newdata = newobs) |> 
   as_tibble() 
 ```
 
@@ -161,7 +163,7 @@ pd |>
 #| warning: false
 newobs <- tibble(position = "GK")
 
-pe <- posterior_epred(fit_1, newdata = newobs) |> 
+pe <- posterior_epred(fit_obj, newdata = newobs) |> 
   as_tibble() 
 ```
 

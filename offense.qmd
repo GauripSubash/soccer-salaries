@@ -19,7 +19,7 @@ library(dplyr)
 #| echo: false
 #| message: false
 #| warning: false
-mls_data <- read.csv("mls-salaries-2007.csv")
+fdata <- read.csv("mls-salaries-2007.csv")
 
 ```
 
@@ -28,43 +28,24 @@ mls_data <- read.csv("mls-salaries-2007.csv")
 #| echo: false
 #| message: false
 #| warning: false
-mls_data |> 
+fdata |> 
   filter(position == "F") |> 
-  select(position, base_salary, club, first_name, last_name) |> 
+  select(position, base_salary, club, first_name, last_name) |>
   ggplot(mapping = aes(x = position, 
                        y = base_salary, 
                        color = club)) + 
-  geom_jitter() + 
+  geom_jitter(size = 2.5) + 
   scale_y_continuous(labels=scales::dollar_format()) + 
-  labs(title = "Soccer salaries earned for forward players in 2007", 
+    scale_color_discrete( 
+    labels = c("CHI" = "Chicago Fire", "CHV" = "Chivas USA", "CLB" = "Columbus Crew", "COL" =         "Colorado Rapids", "DAL" = "FC Dallas", "DC" = "D.C. United", "HOU" = "Houston Dynamo", "KC" =     "Kansas City Wizards", "LA" = "LA Galaxy", "NE" = "New England Revolution", "NY" = "New York Red Bulls", "RSL" = "Real Salt Lake", "TFC" = "Toronto FC")) + 
+  labs(title = "Soccer salaries earned for forwards in 2007",
+       subtitle = "Average for forwards is $147,653, more than average for all positions", 
        x = "Position", 
        y = "Player Base Salary", 
-       caption = "Source: Originally from MLS Union") + 
-  theme_classic()
+       caption = "Source: Originally from MLS Union", 
+       color = "Club") + 
+  theme_classic() + 
+  geom_hline(yintercept = 147653, linetype = "dashed", color = "blue")
 ```
-This data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the highest player salary was around 2.5 million dollars. 
+This data shows the spread of salaries for forwards in 2007. The colors show the clubs each player was in. There are a few outliers in this graph, which show that there isn't consistency for forwards salaries. The line in the middle of the graph displays the average for all forwards in the MLS League in 2007, which is $147,653. 
 
-### Plot for average forward salary in 2007
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-data<- mls_data |> 
-                  filter(position == "F") |> 
-                  reframe(position, salary = mean(base_salary))
-data <- slice(data, 1)
-
-data |> 
-  ggplot(mapping = aes(x = position, 
-                       y = salary, 
-                       fill = position)) + 
-  geom_bar(stat = "identity") + 
-  scale_y_continuous(labels=scales::dollar_format()) + 
-  labs(title = "Average player salary earned for forward players in 2007", 
-       x = "Position", 
-       y = "Player Base Salary", 
-       caption = "Source: Originally from MLS Union") +
-  theme_classic()
-
-```
-This data shows a graph for the average salary a forward had in 2007. This was approximately $150,000, which is more than average for defensive positions.
