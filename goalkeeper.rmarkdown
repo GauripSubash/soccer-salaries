@@ -1,0 +1,59 @@
+---
+title: "Goalkeepers"
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+library(writexl)
+library(stringr)
+library(rstanarm)
+library(dplyr)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+mls_data <- read.csv("mls-salaries-2007.csv")
+
+```
+
+### Plot for all goalkeepers in MLS League in 2007
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+mls_data |> 
+  filter(position == "GK") |> 
+  select(position, base_salary, club, first_name, last_name) |>
+  ggplot(mapping = aes(x = position, 
+                       y = base_salary, 
+                       color = club)) + 
+  geom_jitter(size = 2.5) + 
+  scale_y_continuous(labels=scales::dollar_format()) + 
+    scale_color_discrete( 
+    labels = c("CHI" = "Chicago Fire", "CHV" = "Chivas USA", "CLB" = "Columbus Crew", "COL" =         "Colorado Rapids", "DAL" = "FC Dallas", "DC" = "D.C. United", "HOU" = "Houston Dynamo", "KC" =     "Kansas City Wizards", "LA" = "LA Galaxy", "NE" = "New England Revolution", "NY" = "New York Red Bulls", "RSL" = "Real Salt Lake", "TFC" = "Toronto FC")) + 
+  labs(title = "Soccer salaries earned for goalkeepers in 2007",
+       subtitle = "Average salary for a goalkeeper is around $56,000, less than average for all positions", 
+       x = "Position", 
+       y = "Player Base Salary", 
+       caption = "Source: Originally from MLS Union", 
+       color = "Club") + 
+  theme_classic() + 
+  geom_hline(yintercept = 56502.35, linetype = "dashed", color = "red")
+```
+
+This data shows the spread of salaries for goalkeepers in 2007. The line in the middle of the graph displays the average for all goalkeepers in the MLS League in 2007, which is $56,502.35.
+
+
+
+
+
+
+
