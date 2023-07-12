@@ -23,20 +23,21 @@ library(plotly)
 #| echo: false
 #| message: false
 #| warning: false
+# puts the data into a spreadsheet
 ddata <- read.csv("mls-salaries-2007.csv")
 
 ```
 
-
 ### Plot for all defenders in MLS League in 2007
-
 
 ```{r}
 
 #| echo: false
 #| message: false
 #| warning: false
-
+# plots the data by filtering the position to be defense
+# points are colored by club name
+# plots a dotted line to represent the average salary for a defender
 ddata |> 
   filter(position == "D") |> 
   select(position, base_salary, club, first_name, last_name) |>
@@ -59,9 +60,4 @@ ddata |>
 
 ```
 
-
-
-
-
-
-This data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the spread is wider than some might think. The line in the middle of the graph displays the average for all defenders in the MLS League in 2007, which is $66,842.51.
+This data shows the spread of salaries for defenders in 2007. The colors show the clubs each player was in, and the spread is wider than some might think. The line in the middle of the graph displays the average for all defenders in the MLS League in 2007, which is \$66,842.51.

@@ -19,14 +19,22 @@ library(dplyr)
 #| echo: false
 #| message: false
 #| warning: false
+
+# puts the data into a spreadsheet
 mdata <- read.csv("mls-salaries-2007.csv")
 
 ```
+
 ### Plot for all midfelders in MLS League in 2007
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# plots the data by filtering the position to be midfielders
+# points are colored by club name
+# plots a dotted line to represent the average salary for a midfielder
 mdata |> 
   filter(position == "M") |> 
   select(position, base_salary, club, first_name, last_name) |>
@@ -46,8 +54,5 @@ mdata |>
   theme_classic() + 
   geom_hline(yintercept = 127843.4	, linetype = "dashed", color = "red")
 ```
-This data shows the spread of salaries for midfielders in 2007. The colors show the clubs each player was in. There are a couple extreme outliers in this graph, which show that there isn't consistency for midfielder salaries. The line in the middle of the graph displays the average for all forwards in the MLS League in 2007, which is $127,843. 
 
-
-
-
+This data shows the spread of salaries for midfielders in 2007. The colors show the clubs each player was in. There are a couple extreme outliers in this graph, which show that there isn't consistency for midfielder salaries. The line in the middle of the graph displays the average for all forwards in the MLS League in 2007, which is \$127,843.

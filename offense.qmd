@@ -19,15 +19,22 @@ library(dplyr)
 #| echo: false
 #| message: false
 #| warning: false
+
+# puts the data into a spreadsheet
 fdata <- read.csv("mls-salaries-2007.csv")
 
 ```
 
 ### Plot for all forwards in MLS League in 2007
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# plots the data by filtering the position to be forwards
+# points are colored by club name
+# plots a dotted line to represent the average salary for a forwards
 fdata |> 
   filter(position == "F") |> 
   select(position, base_salary, club, first_name, last_name) |>
@@ -47,5 +54,5 @@ fdata |>
   theme_classic() + 
   geom_hline(yintercept = 147653, linetype = "dashed", color = "blue")
 ```
-This data shows the spread of salaries for forwards in 2007. The colors show the clubs each player was in. There are a few outliers in this graph, which show that there isn't consistency for forwards salaries. The line in the middle of the graph displays the average for all forwards in the MLS League in 2007, which is $147,653. 
 
+This data shows the spread of salaries for forwards in 2007. The colors show the clubs each player was in. There are a few outliers in this graph, which show that there isn't consistency for forwards salaries. The line in the middle of the graph displays the average for all forwards in the MLS League in 2007, which is \$147,653.

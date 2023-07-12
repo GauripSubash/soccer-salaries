@@ -16,22 +16,16 @@ library(dplyr)
 library(gtsummary)
 ```
 
-
-
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+# puts the data into a spreadsheet
 mls_data <- read.csv("mls-salaries-2007.csv")
 
 ```
 
-## What is the approximate salary of a player based on their field position? 
-
-
-
-
-
+## What is the approximate salary of a player based on their field position?
 
 ### Model Equation
 
@@ -39,19 +33,14 @@ $$y_i = \beta_0  + \beta_1 x_{1,i} + \epsilon_i$$
 
 with $y = base\_salary$, $x_1 = position$, and $\epsilon_i \sim N(0, \sigma^2)$.
 
-
-
-
-
-
-
-
-
 ### Fitted Model
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+# filtered the data to select only salary position and club
+# created a fitted model that has base_salary as the outcome and position as the explanatory variable
 x<- mls_data |> 
   select(base_salary, position, club)
 
@@ -63,11 +52,12 @@ fit_obj <- stan_glm(formula = base_salary ~ position,
 fit_obj
 ```
 
-
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+# created a tibble based on forwards
+# created a posterior_epred to predict salary 
 newobs <- tibble(position = "F")
 
 pe <- posterior_epred(fit_obj, newdata = newobs) |> 
@@ -75,10 +65,12 @@ pe <- posterior_epred(fit_obj, newdata = newobs) |>
 ```
 
 ### Plot
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+# Plotted the data from above
 pe |> 
   ggplot(aes(x = `1`)) +
     geom_histogram(aes(y = after_stat(count/sum(count))),
@@ -93,22 +85,25 @@ pe |>
     theme_classic()
 ```
 
-
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# created a tibble based on midfielders
+# created a posterior_epred to predict salary 
 newobs <- tibble(position = "M")
 
 pm <- posterior_epred(fit_obj, newdata = newobs) |> 
   as_tibble() 
 ```
 
- 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# Plotted the data from above
 pm |> 
   ggplot(aes(x = `1`)) +
     geom_histogram(aes(y = after_stat(count/sum(count))),
@@ -123,24 +118,25 @@ pm |>
     theme_classic()
 ```
 
-
-
-
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# created a tibble based on defenders
+# created a posterior_epred to predict salary
 newobs <- tibble(position = "D")
 
 pd <- posterior_epred(fit_obj, newdata = newobs) |> 
   as_tibble() 
 ```
 
- 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# Plotted the data from above
 pd |> 
   ggplot(aes(x = `1`)) +
     geom_histogram(aes(y = after_stat(count/sum(count))),
@@ -155,23 +151,25 @@ pd |>
     theme_classic()
 ```
 
-
-
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# created a tibble based on goalkeepers
+# created a posterior_epred to predict salary
 newobs <- tibble(position = "GK")
 
 pe <- posterior_epred(fit_obj, newdata = newobs) |> 
   as_tibble() 
 ```
 
- 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+
+# Plotted the data from above
 pe |> 
   ggplot(aes(x = `1`)) +
     geom_histogram(aes(y = after_stat(count/sum(count))),
@@ -185,9 +183,3 @@ pe |>
     scale_y_continuous(labels = scales::percent_format()) +
     theme_classic()
 ```
-
-
-
-
-
-
